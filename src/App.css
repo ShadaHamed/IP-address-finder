@@ -112,7 +112,6 @@ h4 {
 	.app{
 		display: flex;
 		flex-direction: column;
-		gap: 90px;
 		height: 170vh;
 	}
 	.details{
