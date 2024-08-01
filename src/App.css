@@ -112,16 +112,15 @@ h4 {
 	.app{
 		display: flex;
 		flex-direction: column;
-		gap: 75px;
+		gap: 90px;
 		height: 170vh;
-		
-
 	}
 	.details{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		margin: 0;
 		background-image: linear-gradient(to right, #ebedf1, #7dc5f5);
 	}
 	.heading { 
@@ -166,5 +165,37 @@ h4 {
 	.leaflet-container {
 		width: 100% !important; /* override the default width */
 	  }
-	
+	 
+  }
+  @media (max-width:425px){
+	.search-box{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.search-box input{
+		width: 70%;
+	}
+	.search-box button{
+		width: 50%;
+		margin-top: 20px;
+	}
+	p{
+		font-size: 14px;
+	}
+	#ip{
+		font-size: 18px;
+	}
+	.map { 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.leaflet-container {
+		width: 100% !important; /* override the default width */
+	  }
+
   }

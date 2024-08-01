@@ -66,16 +66,20 @@ function App() {
 
   return (
     <div className='app'>
-      <h1 className="heading">IP Address Finder</h1>
-      <div className='search-box'>
-        <input
-          type="text"
-          placeholder="Enter IP Address"
-          value={userInput}
-          onChange={(e) => HandleInputChange(e)}
-        />
-        <button onClick={handleIPSearch}>Search</button>
+    {/* top-section */}
+      <div className='top'>
+        <h1 className="heading">IP Address Finder</h1>
+        <div className='search-box'>
+          <input
+            type="text"
+            placeholder="Enter IP Address"
+            value={userInput}
+            onChange={(e) => HandleInputChange(e)}
+          />
+          <button onClick={handleIPSearch}>Search</button>
+        </div>
       </div>
+      {/* details-section */}
       <div className="details">
         <div className="left">
           <h4>IP address</h4>
@@ -85,18 +89,18 @@ function App() {
           <h4>Internet Service Provider(ISP):</h4>
           <p>{ipDetails.org}</p>
         </div>
-
-        <div className='map'>
-          <MapContainer center={center} zoom={13} style={{height:400, width:600}} key={center.lat + ',' + center.lng}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={center} icon={customIcon}>
-              <Popup>{ipDetails.city}</Popup>
-            </Marker>
-          </MapContainer>
-        </div>
+      </div>
+      {/* map-section */}
+      <div className='map'>
+        <MapContainer center={center} zoom={13} style={{height:400, width:600}} key={center.lat + ',' + center.lng}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <Marker position={center} icon={customIcon}>
+            <Popup>{ipDetails.city}</Popup>
+          </Marker>
+        </MapContainer>
       </div>
     </div>
   );
