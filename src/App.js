@@ -79,28 +79,29 @@ function App() {
           <button onClick={handleIPSearch}>Search</button>
         </div>
       </div>
-      {/* details-section */}
+      {/* search-result */}
       <div className="details">
-        <div className="left">
-          <h4>IP address</h4>
-          <h1 id="ip">{ipDetails.ip}</h1>
-          <h4>Approximate location:</h4>
-          <p>{ipDetails.city}, {ipDetails.region}, {ipDetails.country_name}.</p>
-          <h4>Internet Service Provider(ISP):</h4>
-          <p>{ipDetails.org}</p>
+        {/* details-section */}
+          <div className="left">
+            <h4>IP address</h4>
+            <h1 id="ip">{ipDetails.ip}</h1>
+            <h4>Approximate location:</h4>
+            <p>{ipDetails.city}, {ipDetails.region}, {ipDetails.country_name}.</p>
+            <h4>Internet Service Provider(ISP):</h4>
+            <p>{ipDetails.org}</p>
+          </div>
+        {/* map-section */}
+        <div className='map'>
+          <MapContainer center={center} zoom={13} style={{height:400, width:600}} key={center.lat + ',' + center.lng}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={center} icon={customIcon}>
+              <Popup>{ipDetails.city}</Popup>
+            </Marker>
+          </MapContainer>
         </div>
-      </div>
-      {/* map-section */}
-      <div className='map'>
-        <MapContainer center={center} zoom={13} style={{height:400, width:600}} key={center.lat + ',' + center.lng}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <Marker position={center} icon={customIcon}>
-            <Popup>{ipDetails.city}</Popup>
-          </Marker>
-        </MapContainer>
       </div>
     </div>
   );

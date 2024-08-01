@@ -7,14 +7,14 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
   }
+  
 .details { 
 	background-image: linear-gradient(to right, #ebedf1, #7dc5f5);
 	height: 70vh; 
 	display: flex; 
 	justify-content: center; 
 	align-items: center; 
-	
-	
+	display: flex;
 } 
 
 .left { 
@@ -113,6 +113,7 @@ h4 {
 		display: flex;
 		flex-direction: column;
 		height: 170vh;
+		gap: 80px;
 	}
 	.details{
 		display: flex;
@@ -167,6 +168,11 @@ h4 {
 	 
   }
   @media (max-width:425px){
+	.app{
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
 	.search-box{
 		display: flex;
 		flex-direction: column;
@@ -178,6 +184,10 @@ h4 {
 	.search-box button{
 		width: 50%;
 		margin-top: 20px;
+	}
+	.details{
+		display: flex;
+		flex-direction: column;
 	}
 	p{
 		font-size: 14px;
